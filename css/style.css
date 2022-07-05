@@ -194,4 +194,16 @@ header .logo{
         -o-transform: translateY(-10px);
 }
 }
+@media (max-width: 1000px) {
+    .landing .img{
+        display: none;
+    }
+    .landing .text{
+        text-align: center;
+        max-width: 600px;
+    }
+    .landing .container{
+        justify-content: center;
+    }
+}
 /* End Landing */
