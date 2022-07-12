@@ -99,6 +99,8 @@ h1.section-title:hover{
     }
     100%{
         right: 0;
+        width: 0;
+        height: 0;
         width: 51%;
         height: 100%;
         border-radius: 0;
@@ -114,6 +116,8 @@ h1.section-title:hover{
         left: 0;
     }
     100%{
+        width: 0;
+        height: 0;
         left: 0;
         width: 51%;
         height: 100%;
