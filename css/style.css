@@ -76,36 +76,12 @@ h1.section-title::after{
     -o-transform: translateY(-50%);
 }
 h1.section-title:hover::after{
-    right: -1px;
-    width: 51%;
-    height: 101%;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    transition: 0.6s;
-    -webkit-transition: 0.6s;
-    -moz-transition: 0.6s;
-    -ms-transition: 0.6s;
-    -o-transition: 0.6s;
-    z-index: -1;
+    animation: toRight 0.5s linear forwards;
+    -webkit-animation: toRight 0.5s linear forwards;
 }
 h1.section-title:hover::before{
-    left: -1px;
-    width: 51%;
-    height: 101%;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    transition: 0.6s;
-    -webkit-transition: 0.6s;
-    -moz-transition: 0.6s;
-    -ms-transition: 0.6s;
-    -o-transition: 0.6s;
-    z-index: -1;
+    animation: toLeft 0.5s linear forwards;
+    -webkit-animation: toLeft 0.5s linear forwards;
 }
 h1.section-title:hover{
     border-color: #fff;
@@ -115,7 +91,39 @@ h1.section-title:hover{
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
-    transition-delay: 0.4s;
+    transition-delay: 0.6s;
+}
+@keyframes toRight {
+    50%{
+        right: 0;
+    }
+    100%{
+        right: 0;
+        width: 51%;
+        height: 100%;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        z-index: -1;
+}
+}
+@keyframes toLeft {
+    50%{
+        left: 0;
+    }
+    100%{
+        left: 0;
+        width: 51%;
+        height: 100%;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        z-index: -1;
+}
 }
 @media (min-width: 768px) { 
     .container{
@@ -616,3 +624,120 @@ header .container > ul > li:last-of-type:hover .menu{
     }
 }
 /* End Gallry */
+/* Start Features */
+.features{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));
+    gap: 40px;
+}
+.features .box{
+    border: 1px solid #c4c4c4;
+}
+.features .box .img{
+    position: relative;
+    overflow: hidden;
+}
+.features .box .img::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+    z-index: 4;
+    border-width: 0px 0px 170px 500px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.features .box img{
+    max-width: 100%;
+    position: relative;
+    display: block;
+}
+.features .box .img::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--transparent-color);
+    z-index: 2;
+}
+.features .box .text{
+    text-align: center;
+    padding: 20px;
+}
+.features .box .text h1{
+    font-size: 35px;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    font-weight: bold;
+}
+.features .box:nth-child(1){
+    --text-color: #f44036;
+    --transparent-color: #f43f3685;
+}
+.features .box:nth-child(2){
+    --text-color: #009688;
+    --transparent-color: #00968885;
+}
+.features .box:nth-child(3){
+    --text-color: #03a9f4;
+    --transparent-color: #03a9f485;
+}
+.features .box .text h1::before{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    height: 5px;
+    width: calc(100% - 30px);
+    background-color: var(--text-color);
+}
+.features .box .text p{
+    margin: 60px 0;
+    color: #777;
+    font-size: 20px;
+    line-height: 2;
+}
+.features .box .text .btn{
+    background-image: linear-gradient( to right , var(--text-color) 50% , #fff 50% );
+    background-position: right center;
+    background-size: 200% 100%;
+    padding: 10px 30px;
+    border: 3px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 10px auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.features .box:hover .text .btn{
+    color: #fff;
+    background-position: left center;
+}
+.features .box:hover .img::before{
+    border-width: 170px 500px 170px 0;
+}
+/* End Features */
