@@ -12,7 +12,7 @@
     --secondry-color: #2c4755;
     --transparent-color: rgb(15 116 143 / 70%);
     --main-padding: 100px;
-    --section-background-color: #f6f6f6;
+    --section-background-color: #f7f7f7;
 }
 html{
     scroll-behavior: smooth;
@@ -27,7 +27,7 @@ body{
     margin-right: auto;
 }
 h1.section-title{
-    margin: 0 auto 60px auto;
+    margin: 0 auto 100px auto;
     text-transform: uppercase;
     text-align: center;
     position: relative;
@@ -563,9 +563,11 @@ header .container > ul > li:last-of-type:hover .menu{
 /* End Articles */
 /* Start Gallry */
 .gallery{
-    background-color: #f7f7f7;
+    background-color: var(--section-background-color);
 }
-.gallery .container{
+.gallery .container,
+.testimonials .container,
+.team .container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px , 1fr));
     gap: 40px;
@@ -634,7 +636,8 @@ header .container > ul > li:last-of-type:hover .menu{
 }
 /* End Gallry */
 /* Start Features */
-.features{
+.features,
+.team{
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
@@ -752,3 +755,150 @@ header .container > ul > li:last-of-type:hover .menu{
     border-width: 170px 500px 170px 0;
 }
 /* End Features */
+/* Start Testimonials */
+.testimonials{
+    background-color: var(--section-background-color);
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.testimonials .box{
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px #0001;
+    position: relative;
+}
+.testimonials .box img{
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid var(--section-background-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    right: -10px;
+}
+.testimonials .box h3{
+    margin: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.testimonials .box span{
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #777;
+}
+.testimonials .box i{
+    margin-bottom: 10px;
+}
+.testimonials .box i.filled{
+    color: #ffc107;
+}
+.testimonials .box P{
+    line-height: 1.5;
+    color: #333;
+}
+/* ENd Testimonials */
+.team .box{
+    position: relative;
+}
+.team .box::before,
+.team .box::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.team .box::before{
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+.team .box::after{
+    z-index: -1;
+    background-color: #e4e4e4;
+    width: 0;
+}
+.team .box:hover::after{
+    width: calc(100% - 60px);
+}
+.team .box .info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.team .box .info .social{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 60px;
+}
+.team .box .info .social a{
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.team .box .info .social a:hover i{
+    color: var(--main-color);
+}
+.team .box .info .social a i{
+    font-size: 21px;
+    color: #777;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.team .box .info img{
+    width: 100%;
+    border-radius: 10px;
+    width: calc(100% - 60px);
+    transition: 0.3s;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.team .box:hover .info img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+.team .box .text{
+    padding: 10px 0 20px 80px;
+}
+.team .box .text h3{    
+    font-size: 22px;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    color: var(--main-color);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.team .box:hover .text h3{
+    color: #777;
+}
