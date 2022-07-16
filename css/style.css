@@ -643,7 +643,8 @@ header .container > ul > li:last-of-type:hover .menu{
 /* Start Features */
 .features,
 .team,
-.services{
+.services,
+.our-skills{
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
@@ -1007,3 +1008,48 @@ header .container > ul > li:last-of-type:hover .menu{
     display: block;
 }
 /* End Services */
+/* Start Our-Services */
+.our-skills .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.our-skills .skills{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+.our-skills .skills .skill .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.our-skills .skills .skill .title span{
+    font-weight: bold;
+    color: var(--main-color);
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 2.5px 5px;
+    font-size: 14px;
+}
+.our-skills .skills .skill .bar{
+    background: #eee;
+    height: 30px;
+    width: 100%;
+    position: relative;
+}
+.our-skills .skills .skill .bar span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--main-color);
+}
+@media (max-width: 992px) {
+    .our-skills img{
+        display: none;
+    }
+}
+/* End Our-Services */
