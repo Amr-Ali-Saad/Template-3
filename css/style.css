@@ -1448,6 +1448,7 @@ header .container > ul > li:last-of-type:hover .menu{
 .videos .holder .preview span{
     background: #fff;
     padding: 20px;
+    margin-top: 20px;
 }
 @media (max-width: 992px) {
     .videos .holder{
@@ -1455,3 +1456,90 @@ header .container > ul > li:last-of-type:hover .menu{
     }
 }
 /* End Videos */
+/* Start Stats */
+.stats{
+    padding: var(--main-padding) 0;
+    position: relative;
+    background-image: url(../img/stats.jpg);
+    min-height: 300px;
+    background-size: cover;
+}
+.stats::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 95%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.stats > h2:first-of-type{
+    position: relative;
+    text-align: center;
+    margin: 0 auto 50px;
+    font-size: 40px;
+    width: fit-content;
+}
+.stats .container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
+    gap: 40px;
+}
+.stats .box{
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #fff;
+    opacity: 0.8;
+    transition: 0.3s;
+    position: relative;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.stats .box::after,
+.stats .box::before{
+    content: "";
+    width: 2px;
+    position: absolute;
+    height: 0;
+    background-color: var(--main-color);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+.stats .box:hover{
+    opacity: 1;
+}
+.stats .box:hover::after,
+.stats .box:hover::before{
+    height: 100%;
+}
+.stats .box::after{
+    top: 0;
+    left: 1px;
+}
+.stats .box::before{
+    bottom: 0;
+    right: 0;
+}
+.stats .box i{
+    font-size: 35px;
+}
+.stats .box .num{
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.stats .box .text{
+    display: block;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--main-color);
+}
+/* End Stats */
