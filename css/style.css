@@ -1449,4 +1449,9 @@ header .container > ul > li:last-of-type:hover .menu{
     background: #fff;
     padding: 20px;
 }
+@media (max-width: 992px) {
+    .videos .holder{
+        flex-direction: column;
+    }
+}
 /* End Videos */
