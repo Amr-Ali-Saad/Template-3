@@ -1614,7 +1614,8 @@ header .container > ul > li:last-of-type:hover .menu{
     width: var(--width);
 }
 .dicount .request input,
-.dicount .request textarea{
+.dicount .request textarea,
+.dicount .request button[type = "submit"]{
     padding: 15px;
     border: 0;
     background: #f9f9f9;
@@ -1624,7 +1625,7 @@ header .container > ul > li:last-of-type:hover .menu{
 .dicount .request textarea:focus{
     outline: none;
 }
-.dicount .request input[type = "submit"]{
+.dicount .request button[type = "submit"]{
     background-color: var(--main-color);
     color: #fff;
     font-weight: bold;
